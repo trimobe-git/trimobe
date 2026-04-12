@@ -26,10 +26,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://trimobe.com'),
   title: {
-    default: "Trimobe - AI Document Generator for Verra VCS Carbon Credits",
+    default: "Trimobe — Intermediação de Créditos de Carbono Agro",
     template: "%s | Trimobe"
   },
-  description: "Generate and validate Verra/VCS carbon credit documentation with AI. Transform 3-6 weeks and $5,000+ into 2 minutes and $19. Support for VCS, REDD+, ARR, AFOLU methodologies. Free document validation.",
+  description: "Intermediação de créditos de carbono entre cooperativas agrícolas brasileiras e empresas com metas de descarbonização. Documentação técnica, comprador qualificado, comissão só no fechamento.",
   applicationName: 'Trimobe',
   appleWebApp: {
     capable: true,
@@ -37,21 +37,19 @@ export const metadata: Metadata = {
     title: 'Trimobe',
   },
   keywords: [
-    "Verra documentation",
-    "VCS carbon credits",
-    "carbon credit documentation",
-    "PDD generator",
-    "Project Description Document",
-    "REDD+ documentation",
-    "ARR methodology",
-    "AFOLU carbon projects",
-    "carbon credit validation",
-    "Verra VCS AI",
-    "carbon project documentation",
-    "VCU verification",
-    "CCBS documentation",
-    "SD VISta",
-    "carbon offset documentation"
+    "crédito de carbono",
+    "vender crédito de carbono",
+    "comprar crédito de carbono",
+    "cooperativa crédito carbono",
+    "intermediação crédito carbono",
+    "crédito carbono agro",
+    "SBCE",
+    "mercado de carbono Brasil",
+    "CBAM",
+    "pecuária regenerativa",
+    "café baixo carbono",
+    "soja baixo carbono",
+    "crédito carbono cooperativa agrícola"
   ],
   authors: [{ name: "Trimobe" }],
   creator: "Trimobe",
@@ -63,24 +61,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "pt_BR",
     url: "https://trimobe.com",
     siteName: "Trimobe",
-    title: "Trimobe - AI Document Generator for Verra VCS Carbon Credits",
-    description: "Generate and validate Verra/VCS carbon credit documentation with AI. Transform 3-6 weeks and $5,000+ into 2 minutes and $19. Support for VCS, REDD+, ARR, AFOLU methodologies.",
+    title: "Trimobe — Intermediação de Créditos de Carbono Agro",
+    description: "Intermediação de créditos de carbono entre cooperativas agrícolas brasileiras e empresas com metas de descarbonização. Documentação técnica, comprador qualificado, comissão só no fechamento.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Trimobe - Verra Documentation AI Assistant",
+        alt: "Trimobe — Intermediação de Créditos de Carbono Agro",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trimobe - AI Document Generator for Verra VCS Carbon Credits",
-    description: "Generate and validate Verra/VCS carbon credit documentation with AI. Transform weeks into minutes, save 99% in costs.",
+    title: "Trimobe — Intermediação de Créditos de Carbono Agro",
+    description: "Intermediação de créditos de carbono entre cooperativas agrícolas brasileiras e empresas com metas de descarbonização.",
     images: ["/twitter-image.png"],
     creator: "@trimobe",
   },
@@ -98,18 +96,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/manifest.json",
   alternates: {
     canonical: "https://trimobe.com",
   },
-  category: "technology",
-  classification: "SaaS, Carbon Credits, AI Document Generation",
+  category: "business",
+  classification: "Intermediação, Créditos de Carbono, Agro Brasileiro",
 };
 
 export default function RootLayout({
@@ -120,7 +114,7 @@ export default function RootLayout({
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || '';
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="pt-BR" className="scroll-smooth">
       <head>
         <GoogleTagManager gtmId={gtmId} />
         <StructuredData />

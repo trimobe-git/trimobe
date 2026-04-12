@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Mail } from 'lucide-react';
+import { Orbit, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Sparkles className="text-primary dark:text-white w-5 h-5" />
+            <Orbit className="text-primary dark:text-white w-5 h-5" />
             <span className="font-bold text-lg text-gray-900 dark:text-white">Trimobe</span>
           </div>
 
@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
               href="/security-policy"
               className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
             >
-              Security Policy
+              Política de Segurança
             </a>
             <a
               href="/terms-of-service"
               className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
             >
-              Terms of Service
+              Termos de Uso
             </a>
           </div>
 

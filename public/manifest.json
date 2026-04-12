@@ -1,11 +1,11 @@
 {
-  "name": "Trimobe - AI Document Generator for Verra VCS Carbon Credits",
+  "name": "Trimobe - Intermediação de Créditos de Carbono Agro",
   "short_name": "Trimobe",
-  "description": "Generate and validate Verra/VCS carbon credit documentation with AI. Transform weeks into minutes.",
+  "description": "Intermediação de créditos de carbono entre cooperativas agrícolas e empresas com metas de descarbonização.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "theme_color": "#0f172a",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -15,15 +15,15 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity", "utilities"],
-  "lang": "en-US",
+  "categories": ["business"],
+  "lang": "pt-BR",
   "dir": "ltr",
   "scope": "/",
   "shortcuts": [
     {
-      "name": "Validate Document",
-      "short_name": "Validate",
-      "description": "Validate your Verra documentation",
+      "name": "Fale Conosco",
+      "short_name": "Contato",
+      "description": "Entre em contato com a Trimobe",
       "url": "/#lead-capture",
       "icons": [
         {
