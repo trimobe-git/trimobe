@@ -1,7 +1,19 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#7C3AED"/>
-  <g transform="translate(8, 8)">
-    <path d="M12 0L13.545 5.455L19 7L13.545 8.545L12 14L10.455 8.545L5 7L10.455 5.455L12 0Z" fill="white"/>
-    <path d="M4 2L4.818 4.182L7 5L4.818 5.818L4 8L3.182 5.818L1 5L3.182 4.182L4 2Z" fill="white"/>
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+
+  <!-- Orbit icon: nucleus and orbiting rings -->
+  <g transform="translate(16, 16)">
+    <!-- Central nucleus -->
+    <circle cx="0" cy="0" r="2.5" fill="white"/>
+
+    <!-- Inner orbit -->
+    <circle cx="0" cy="0" r="6" fill="none" stroke="white" stroke-width="1.2"/>
+
+    <!-- Outer orbit -->
+    <circle cx="0" cy="0" r="9" fill="none" stroke="white" stroke-width="1.2" opacity="0.7"/>
+
+    <!-- Small satellite on inner orbit -->
+    <circle cx="6" cy="0" r="1.5" fill="white"/>
   </g>
 </svg>

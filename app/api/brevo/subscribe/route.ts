@@ -4,7 +4,7 @@ interface BrevoContact {
   email: string;
   attributes: {
     FIRSTNAME: string;
-    COUNTRY: string;
+    MESSAGE: string;
   };
   listIds?: number[];
   updateEnabled?: boolean;
@@ -13,16 +13,16 @@ interface BrevoContact {
 interface RequestBody {
   name: string;
   email: string;
-  country: string;
+  message: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: RequestBody = await request.json();
-    const { name, email, country } = body;
+    const { name, email, message } = body;
 
     // Validação básica
-    if (!name || !email || !country) {
+    if (!name || !email || !message) {
       return NextResponse.json(
         { message: 'Todos os campos são obrigatórios.' },
         { status: 400 }
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       email: email,
       attributes: {
         FIRSTNAME: name,
-        COUNTRY: country,
+        MESSAGE: message,
       },
       updateEnabled: true, // Atualiza o contato se já existir
     };
@@ -78,10 +78,9 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(brevoContact),
     });
 
-    const responseData = await response.json();
-
-    // Brevo retorna 201 para criação ou 204 para contato duplicado (sucesso)
-    if (response.status === 201 || response.status === 204) {
+    // Brevo retorna 201 para novo contato (com body) ou 204 para atualização (sem body)
+    if (response.status === 201) {
+      const responseData = await response.json();
       return NextResponse.json(
         {
           success: true,
@@ -91,6 +90,19 @@ export async function POST(request: NextRequest) {
         { status: 200 }
       );
     }
+
+    if (response.status === 204) {
+      return NextResponse.json(
+        {
+          success: true,
+          message: 'Cadastro realizado com sucesso!',
+        },
+        { status: 200 }
+      );
+    }
+
+    // Para outros status, tentar parsear o body de erro
+    const responseData = await response.json();
 
     // Se o contato já existe (código 400 com message específica), tratamos como sucesso
     if (response.status === 400 && responseData.message?.includes('Contact already exist')) {
