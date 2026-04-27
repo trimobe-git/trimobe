@@ -1,302 +1,247 @@
-import React from 'react';
-import Link from 'next/link';
-import { ArrowLeft, FileText, Scale, Users, Handshake, AlertCircle, CheckCircle } from 'lucide-react';
-import { Metadata } from 'next';
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Termos de Uso | Trimobe",
-  description: "Termos de uso da Trimobe, plataforma de intermediação de créditos de carbono agrícola. Conheça as regras que regem o uso do nosso site e dos nossos serviços.",
-  openGraph: {
-    title: "Termos de Uso | Trimobe",
-    description: "Termos de uso da Trimobe, plataforma de intermediação de créditos de carbono agrícola.",
-    url: "https://trimobe.com/terms-of-service",
-  },
-  alternates: {
-    canonical: "https://trimobe.com/terms-of-service",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: "Termos de Uso",
+  description:
+    "Termos de uso dos serviços da Trimobe: cadastro, otimização e recuperação de perfil no Google e site profissional conectado ao Google. Pagamento só na entrega.",
+  alternates: { canonical: "https://trimobe.com/terms-of-service" },
+  robots: { index: true, follow: true },
 };
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-white dark:bg-background-dark">
-      {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+    <div className="min-h-screen bg-bg">
+      <header className="border-b border-border bg-surface">
+        <div className="mx-auto max-w-content px-5 py-5">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-microcopy text-ink-muted hover:text-ink"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" aria-hidden />
             Voltar ao início
           </Link>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <main className="mx-auto max-w-content px-5 py-12 md:py-20">
+        <h1 className="font-display font-semibold text-h1 md:text-h1-lg text-ink">
+          Termos de Uso
+        </h1>
+        <p className="mt-3 text-microcopy text-ink-muted">
+          Última atualização: 27 de abril de 2026.
+        </p>
 
-        {/* Title */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <FileText className="w-8 h-8 text-primary dark:text-white" />
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-              Termos de Uso
-            </h1>
-          </div>
-          <p className="text-gray-600 dark:text-gray-400">
-            Última atualização: 12 de abril de 2026
-          </p>
+        <div className="mt-10 space-y-10 text-body text-ink/90">
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              1. O que a Trimobe faz
+            </h2>
+            <p>
+              A Trimobe presta serviços únicos (não recorrentes) relacionados ao
+              perfil de empresa no Google: cadastro do zero, otimização de
+              perfil existente, recuperação de perfil suspenso e site
+              profissional conectado ao Google. Não somos parceiros oficiais do
+              Google. Atendemos remotamente, pelo WhatsApp, em todo o Brasil.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              2. Como o serviço é contratado
+            </h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                Você inicia a conversa pelo WhatsApp por meio dos botões deste
+                site.
+              </li>
+              <li>
+                A Trimobe envia um orçamento fechado, com prazo de entrega e
+                escopo descritos por escrito.
+              </li>
+              <li>
+                A contratação é confirmada por sua mensagem dizendo
+                expressamente que aceita o orçamento, prazo e escopo.
+              </li>
+              <li>
+                A execução começa apenas após essa confirmação, sem cobrança
+                antecipada.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              3. Pagamento só na entrega
+            </h2>
+            <p>
+              Você não paga nada antes do serviço estar pronto. A cobrança é
+              enviada pelo WhatsApp <strong>no momento da entrega</strong>, com
+              um link do Mercado Pago e os comprovantes do que foi feito (perfil
+              no ar, site funcionando ou comprovante de envio do recurso ao
+              Google, conforme o caso).
+            </p>
+            <p className="mt-3">
+              Aceitamos PIX (com 5% de desconto à vista) ou cartão de crédito em
+              até 6x sem juros, via Mercado Pago.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              4. Conferência antes de pagar
+            </h2>
+            <p>
+              Antes da cobrança, você confere o entregável. Se algo não estiver
+              de acordo com o escopo combinado, a Trimobe ajusta antes da
+              cobrança. Se mesmo após os ajustes você decidir não pagar, o
+              serviço não vai ao ar (ou é revertido) e o assunto se encerra —
+              sem multa e sem custo.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              5. Prazo combinado
+            </h2>
+            <p>
+              O prazo é informado por escrito no WhatsApp na hora da
+              contratação. Se a Trimobe atrasar a entrega por motivo próprio,
+              será concedido desconto no valor combinado, proporcional ao
+              atraso. Não é considerado atraso o tempo de resposta de terceiros
+              (por exemplo, validação do Google ou retorno do cliente sobre
+              materiais necessários).
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              6. Recuperação de perfil suspenso
+            </h2>
+            <p>
+              A recuperação de perfil suspenso depende da decisão final do
+              Google, que está fora do controle da Trimobe. Por isso oferecemos
+              duas modalidades:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mt-3">
+              <li>
+                <strong>Modalidade 1 — R$ 1.197.</strong> O pagamento ocorre no
+                momento em que a Trimobe submete o pedido formal de revisão ao
+                Google. Esse é o gatilho do pagamento, não a resposta do Google.
+              </li>
+              <li>
+                <strong>Modalidade 2 — R$ 1.797 (“só paga se voltar”).</strong>{" "}
+                O pagamento ocorre apenas após o Google reativar o perfil. Caso
+                o Google negue, você não paga nada.
+              </li>
+            </ul>
+            <p className="mt-3">
+              Em caso de negativa em primeira instância na Modalidade 1,
+              oferecemos uma <strong>segunda tentativa sem custo extra</strong>.
+              A escolha da modalidade é feita por escrito antes do início.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              7. O que NÃO está incluído
+            </h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                Promessa de aparecer em primeiro lugar no Google. O ranqueamento
+                depende de fatores fora do controle de qualquer prestador.
+              </li>
+              <li>Visitas presenciais na sua empresa.</li>
+              <li>
+                Serviços contínuos mensais (a Trimobe não trabalha com
+                mensalidade).
+              </li>
+              <li>
+                Compras de avaliações falsas, manipulação de reviews ou
+                qualquer prática que viole as diretrizes do Google.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              8. Responsabilidade do cliente
+            </h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                Fornecer informações verídicas (CNPJ, endereço, contato,
+                horário, fotos).
+              </li>
+              <li>
+                Quando necessário, conceder acesso administrativo temporário ao
+                perfil no Google e revogar esse acesso após a entrega.
+              </li>
+              <li>Manter o perfil dentro das diretrizes do Google.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              9. Limitação de responsabilidade
+            </h2>
+            <p>
+              A Trimobe responde apenas pelo escopo combinado por escrito no
+              WhatsApp. Não nos responsabilizamos por suspensões futuras
+              causadas por alterações feitas pelo cliente ou por terceiros após
+              a entrega, nem por decisões algorítmicas do Google que afetem o
+              ranqueamento.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              10. Privacidade
+            </h2>
+            <p>
+              O tratamento dos dados se rege pela nossa{" "}
+              <Link
+                href="/security-policy"
+                className="text-brand hover:underline"
+              >
+                Política de Privacidade
+              </Link>
+              .
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              11. Contato
+            </h2>
+            <p>
+              Dúvidas sobre estes termos:{" "}
+              <a
+                href="mailto:contato@trimobe.com"
+                className="text-brand hover:underline"
+              >
+                contato@trimobe.com
+              </a>
+              .
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              12. Lei aplicável
+            </h2>
+            <p>
+              Estes termos são regidos pelas leis da República Federativa do
+              Brasil. Foro do domicílio do cliente, salvo opção em contrário por
+              ele.
+            </p>
+          </section>
         </div>
-
-        {/* Introduction */}
-        <section className="mb-12">
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            Bem-vindo à Trimobe. Estes Termos de Uso ("Termos") regulam o acesso e o uso do nosso site e dos nossos serviços de intermediação de créditos de carbono agrícola. Ao entrar em contato conosco ou utilizar nossos serviços, você concorda com estes Termos.
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Leia atentamente. Se não concordar com estes Termos, não utilize nossos serviços.
-          </p>
-        </section>
-
-        {/* 1. Quem somos */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Users className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              1. Quem somos
-            </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>
-              A Trimobe é uma plataforma brasileira de intermediação de créditos de carbono agrícola. Conectamos cooperativas com créditos certificados a empresas com metas de descarbonização, atuando exclusivamente como intermediários.
-            </p>
-            <p>
-              Não somos uma corretora de valores mobiliários, não realizamos operações financeiras reguladas, e não garantimos a conclusão de qualquer negociação.
-            </p>
-          </div>
-        </section>
-
-        {/* 2. Nossos serviços */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Handshake className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              2. Nossos serviços
-            </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                2.1 Para cooperativas (vendedores)
-              </h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Identificação e qualificação de potenciais compradores</li>
-                <li>Apoio na apresentação dos créditos certificados ao mercado</li>
-                <li>Intermediação nas negociações entre as partes</li>
-              </ul>
-              <p className="mt-3">
-                Nossa remuneração é uma comissão de <strong>5% a 10% sobre o valor da venda</strong>, cobrada apenas quando a transação é concluída. Não cobramos taxas antecipadas.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                2.2 Para empresas (compradoras)
-              </h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Seleção e curadoria de créditos de carbono agrícola verificados</li>
-                <li>Análise de qualidade e risco antes da apresentação</li>
-                <li>Apoio durante o processo de negociação e documentação</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                2.3 Escopo do site
-              </h3>
-              <p>
-                O site da Trimobe serve como canal de apresentação e captação de interesse. As negociações e eventuais contratos são formalizados diretamente entre as partes, com suporte da Trimobe.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. Aceitação e elegibilidade */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Scale className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              3. Aceitação e elegibilidade
-            </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>
-              Ao enviar uma mensagem ou usar este site, você declara que:
-            </p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>É maior de 18 anos ou possui capacidade legal para assumir obrigações</li>
-              <li>Representa legitimamente a organização em nome da qual age, se aplicável</li>
-              <li>As informações fornecidas são verdadeiras, completas e atuais</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* 4. Obrigações do usuário */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            4. Obrigações do usuário
-          </h2>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>Ao utilizar nosso site e serviços, você concorda em:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Fornecer informações verídicas e não omitir fatos relevantes</li>
-              <li>Não utilizar o site para fins ilegais ou fraudulentos</li>
-              <li>Não reproduzir, copiar ou distribuir conteúdo do site sem autorização</li>
-              <li>Não tentar acessar sistemas ou informações além do que lhe é disponibilizado</li>
-              <li>Não utilizar ferramentas automatizadas para acesso ao site (bots, scrapers etc.)</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* 5. Limitações e isenções */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <AlertCircle className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              5. Limitações e isenções
-            </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                5.1 Sem garantia de resultado
-              </h3>
-              <p>
-                A Trimobe não garante que qualquer negociação será concluída, nem que compradores ou vendedores serão encontrados dentro de um prazo determinado. Nossa atuação é de intermediação, e o resultado depende de fatores fora do nosso controle.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                5.2 Sem assessoria jurídica ou financeira
-              </h3>
-              <p>
-                As informações disponibilizadas no site e no atendimento têm caráter informativo e não constituem assessoria jurídica, financeira, tributária ou de investimentos. Recomendamos que as partes consultem profissionais habilitados antes de formalizar qualquer transação.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                5.3 Responsabilidade pelas transações
-              </h3>
-              <p>
-                Os contratos de compra e venda de créditos de carbono são celebrados diretamente entre cooperativas e empresas. A Trimobe não é parte contratante e não se responsabiliza por disputas, inadimplemento ou irregularidades entre as partes.
-              </p>
-            </div>
-
-            <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-4 rounded">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                5.4 Limitação de responsabilidade
-              </h3>
-              <p className="text-sm">
-                NA MÁXIMA EXTENSÃO PERMITIDA PELA LEGISLAÇÃO APLICÁVEL, A TRIMOBE NÃO SE RESPONSABILIZA POR DANOS INDIRETOS, INCIDENTAIS, LUCROS CESSANTES OU DANOS CONSEQUENTES DECORRENTES DO USO OU DA IMPOSSIBILIDADE DE USO DOS NOSSOS SERVIÇOS. NOSSA RESPONSABILIDADE TOTAL ESTÁ LIMITADA AO VALOR DE EVENTUAIS COMISSÕES PAGAS NOS 12 MESES ANTERIORES AO EVENTO GERADOR DA RECLAMAÇÃO.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. Propriedade intelectual */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            6. Propriedade intelectual
-          </h2>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>
-              Todo o conteúdo do site — incluindo textos, logotipo, identidade visual, código e estrutura — é de propriedade exclusiva da Trimobe e está protegido pela legislação brasileira de propriedade intelectual.
-            </p>
-            <p>
-              É vedada a reprodução, total ou parcial, sem autorização prévia e por escrito da Trimobe.
-            </p>
-          </div>
-        </section>
-
-        {/* 7. Privacidade */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            7. Privacidade e proteção de dados
-          </h2>
-          <p className="text-gray-700 dark:text-gray-300">
-            O tratamento dos dados pessoais coletados por meio do site é regido pela nossa{' '}
-            <Link href="/security-policy" className="text-primary dark:text-white hover:underline">
-              Política de Privacidade e Segurança
-            </Link>
-            , em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
-          </p>
-        </section>
-
-        {/* 8. Modificações */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            8. Modificações dos Termos
-          </h2>
-          <p className="text-gray-700 dark:text-gray-300">
-            A Trimobe reserva-se o direito de atualizar estes Termos a qualquer momento. Alterações relevantes serão comunicadas por e-mail ou por aviso no site com antecedência mínima de 15 dias. O uso continuado dos nossos serviços após a vigência das alterações implica aceitação da nova versão.
-          </p>
-        </section>
-
-        {/* 9. Lei aplicável e foro */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            9. Lei aplicável e foro
-          </h2>
-          <p className="text-gray-700 dark:text-gray-300">
-            Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca de São Paulo — SP como competente para dirimir quaisquer controvérsias decorrentes destes Termos, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
-          </p>
-        </section>
-
-        {/* 10. Contato */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <CheckCircle className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              10. Contato
-            </h2>
-          </div>
-          <div className="bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Em caso de dúvidas sobre estes Termos, entre em contato:
-            </p>
-            <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p><strong>E-mail:</strong> <a href="mailto:contato@trimobe.com" className="text-primary dark:text-white hover:underline">contato@trimobe.com</a></p>
-              <p><strong>Site:</strong> <a href="/" className="text-primary dark:text-white hover:underline">trimobe.com</a></p>
-            </div>
-          </div>
-        </section>
-
-        {/* Acknowledgment */}
-        <section className="mb-12">
-          <div className="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-6 rounded">
-            <p className="text-gray-700 dark:text-gray-300 font-semibold mb-2">
-              Confirmação de leitura
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              AO UTILIZAR O SITE OU ENTRAR EM CONTATO COM A TRIMOBE, VOCÊ CONFIRMA QUE LEU, COMPREENDEU E CONCORDA COM ESTES TERMOS DE USO. CASO NÃO CONCORDE, NÃO UTILIZE NOSSOS SERVIÇOS.
-            </p>
-          </div>
-        </section>
-
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            © 2026 Trimobe. Todos os direitos reservados.
-          </p>
+      <footer className="border-t border-border py-8">
+        <div className="mx-auto max-w-content px-5 text-center text-microcopy text-ink-muted">
+          © {new Date().getFullYear()} Trimobe.
         </div>
       </footer>
     </div>
