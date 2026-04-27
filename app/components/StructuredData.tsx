@@ -1,58 +1,81 @@
-import React from 'react';
-
 export default function StructuredData() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Trimobe",
-    "url": "https://trimobe.com",
-    "logo": "https://trimobe.com/icon.svg",
-    "description": "Intermediação de créditos de carbono entre cooperativas agrícolas brasileiras e empresas com metas de descarbonização.",
-    "foundingDate": "2024",
-    "contactPoint": {
+    name: "Trimobe",
+    url: "https://trimobe.com",
+    logo: "https://trimobe.com/icon.svg",
+    description:
+      "Cadastro, otimização e recuperação de perfis no Google Meu Negócio para pequenas empresas brasileiras.",
+    contactPoint: {
       "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "email": "contato@trimobe.com",
-      "availableLanguage": ["Portuguese"]
+      contactType: "Customer Service",
+      email: "contato@trimobe.com",
+      availableLanguage: ["Portuguese"],
+      areaServed: "BR",
     },
-    "sameAs": [
-      "https://twitter.com/trimobe",
-      "https://linkedin.com/company/trimobe"
-    ]
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Trimobe",
-    "url": "https://trimobe.com",
-    "description": "Intermediação de créditos de carbono agro — conectando cooperativas agrícolas a empresas compradoras no Brasil."
+    name: "Trimobe",
+    url: "https://trimobe.com",
+    inLanguage: "pt-BR",
+    description:
+      "Coloque sua empresa no Google em poucos dias. Cadastro, otimização e recuperação de perfil. Pagamento só na entrega.",
   };
 
-  const serviceSchema = {
+  const businessSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Intermediação de Créditos de Carbono",
-    "provider": {
-      "@type": "Organization",
-      "name": "Trimobe"
-    },
-    "description": "Intermediação especializada em créditos de carbono agrícolas — café, soja e pecuária regenerativa. Documentação técnica completa, curadoria de compradores qualificados, comissão apenas no fechamento.",
-    "areaServed": {
+    "@type": "ProfessionalService",
+    name: "Trimobe",
+    url: "https://trimobe.com",
+    description:
+      "Serviços únicos de Google Meu Negócio: cadastro e otimização de perfil (com ou sem site profissional incluso) e recuperação de perfil suspenso com modalidade risco zero. Atendimento 100% remoto pelo WhatsApp.",
+    areaServed: {
       "@type": "Country",
-      "name": "Brazil"
+      name: "Brazil",
     },
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://trimobe.com"
-    }
+    serviceType: [
+      "Cadastro e otimização de perfil no Google Meu Negócio",
+      "Recuperação de perfil suspenso no Google Meu Negócio",
+    ],
+    priceRange: "R$ 297 — R$ 1.497",
+    paymentAccepted: ["PIX", "Cartão de crédito"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Serviços Trimobe",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Cadastro & otimização de perfil no Google",
+          price: "297.00",
+          priceCurrency: "BRL",
+        },
+        {
+          "@type": "Offer",
+          name: "Cadastro & otimização com site profissional incluso",
+          price: "397.00",
+          priceCurrency: "BRL",
+        },
+        {
+          "@type": "Offer",
+          name: "Recuperação de perfil suspenso (risco zero)",
+          price: "1497.00",
+          priceCurrency: "BRL",
+        },
+      ],
+    },
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -60,7 +83,7 @@ export default function StructuredData() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
       />
     </>
   );

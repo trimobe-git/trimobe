@@ -1,47 +1,91 @@
-import React from 'react';
-import { Orbit, Mail } from 'lucide-react';
+import Link from "next/link";
+import Logo from "./Logo";
+import { phoneDisplay } from "../lib/whatsapp";
 
-const Footer: React.FC = () => {
+export default function Footer() {
+  const phone = phoneDisplay();
+
   return (
-    <footer className="pb-20 md:pb-12 pt-10 sm:pt-12 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 transition-colors duration-300 safe-area-inset-bottom">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
-
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Orbit className="text-primary dark:text-white w-5 h-5" />
-            <span className="font-bold text-lg text-gray-900 dark:text-white">Trimobe</span>
+    <footer className="border-t border-border bg-surface">
+      <div className="mx-auto max-w-wide px-5 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <Logo />
+            <p className="mt-4 text-body text-ink-muted max-w-xs">
+              Cadastro, otimização e recuperação de perfis no Google para
+              pequenas empresas.
+            </p>
           </div>
-
-          {/* Policy Links */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <a
-              href="/security-policy"
-              className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
-            >
-              Política de Segurança
-            </a>
-            <a
-              href="/terms-of-service"
-              className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
-            >
-              Termos de Uso
-            </a>
+          <nav aria-label="Serviços">
+            <h3 className="font-display font-semibold text-h3 text-ink mb-3">
+              Serviços
+            </h3>
+            <ul className="space-y-2 text-body text-ink-muted">
+              <li>
+                <Link href="#perfil" className="hover:text-ink">
+                  Cadastro & otimização do perfil
+                </Link>
+              </li>
+              <li>
+                <Link href="#recuperacao" className="hover:text-ink">
+                  Recuperação de perfil suspenso
+                </Link>
+              </li>
+              <li>
+                <Link href="#pacotes" className="hover:text-ink">
+                  Ver pacotes e preços
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <h3 className="font-display font-semibold text-h3 text-ink mb-3">
+              Contato
+            </h3>
+            <ul className="space-y-2 text-body text-ink-muted">
+              {phone && (
+                <li>
+                  <span className="text-ink-muted">WhatsApp:</span>{" "}
+                  <span className="text-ink">{phone}</span>
+                </li>
+              )}
+              <li>
+                <a
+                  href="mailto:contato@trimobe.com"
+                  className="hover:text-ink"
+                >
+                  contato@trimobe.com
+                </a>
+              </li>
+              <li>Atendimento: Brasil inteiro</li>
+              <li>Seg a sex, 9h às 18h</li>
+            </ul>
           </div>
+          <div>
+            <h3 className="font-display font-semibold text-h3 text-ink mb-3">
+              Institucional
+            </h3>
+            <ul className="space-y-2 text-body text-ink-muted">
+              <li>
+                <Link href="/security-policy" className="hover:text-ink">
+                  Política de privacidade
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" className="hover:text-ink">
+                  Termos de uso
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-          {/* Contact */}
-          <a
-            href="mailto:contato@trimobe.com"
-            className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-            <span className="text-sm font-medium">contato@trimobe.com</span>
-          </a>
-
+        <div className="mt-12 pt-6 border-t border-border text-microcopy text-ink-muted text-center">
+          © {new Date().getFullYear()} Trimobe. Não somos parceiros oficiais do
+          Google. Google e Google Meu Negócio são marcas registradas do Google
+          LLC.
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

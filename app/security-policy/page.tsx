@@ -1,281 +1,177 @@
-import React from 'react';
-import Link from 'next/link';
-import { ArrowLeft, Shield, Lock, Database, Eye, FileText } from 'lucide-react';
-import { Metadata } from 'next';
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade e Segurança | Trimobe",
-  description: "Política de privacidade e segurança da Trimobe. Saiba como tratamos os seus dados pessoais em conformidade com a LGPD.",
-  openGraph: {
-    title: "Política de Privacidade e Segurança | Trimobe",
-    description: "Saiba como a Trimobe protege os seus dados pessoais em conformidade com a LGPD.",
-    url: "https://trimobe.com/security-policy",
-  },
-  alternates: {
-    canonical: "https://trimobe.com/security-policy",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: "Política de Privacidade",
+  description:
+    "Como a Trimobe coleta e trata os dados de quem visita o site e contrata nossos serviços de Google Meu Negócio. Em conformidade com a LGPD.",
+  alternates: { canonical: "https://trimobe.com/security-policy" },
+  robots: { index: true, follow: true },
 };
 
 export default function SecurityPolicy() {
   return (
-    <div className="min-h-screen bg-white dark:bg-background-dark">
-      {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+    <div className="min-h-screen bg-bg">
+      <header className="border-b border-border bg-surface">
+        <div className="mx-auto max-w-content px-5 py-5">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-microcopy text-ink-muted hover:text-ink"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" aria-hidden />
             Voltar ao início
           </Link>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <main className="mx-auto max-w-content px-5 py-12 md:py-20">
+        <h1 className="font-display font-semibold text-h1 md:text-h1-lg text-ink">
+          Política de Privacidade
+        </h1>
+        <p className="mt-3 text-microcopy text-ink-muted">
+          Última atualização: 27 de abril de 2026.
+        </p>
 
-        {/* Title */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-8 h-8 text-primary dark:text-white" />
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-              Política de Privacidade e Segurança
-            </h1>
-          </div>
-          <p className="text-gray-600 dark:text-gray-400">
-            Última atualização: 12 de abril de 2026
-          </p>
-        </div>
-
-        {/* Introduction */}
-        <section className="mb-12">
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            A Trimobe respeita a sua privacidade e está comprometida com a proteção dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Esta política explica quais dados coletamos, como os utilizamos e quais são os seus direitos. Em caso de dúvidas, entre em contato pelo e-mail{' '}
-            <a href="mailto:contato@trimobe.com" className="text-primary dark:text-white hover:underline">
-              contato@trimobe.com
-            </a>.
-          </p>
-        </section>
-
-        {/* Quem somos */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <FileText className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="mt-10 space-y-10 text-body text-ink/90">
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
               Quem somos
             </h2>
-          </div>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            A Trimobe é uma plataforma de intermediação de créditos de carbono agrícola brasileira, que conecta cooperativas detentoras de créditos certificados a empresas com metas de descarbonização. Atuamos como intermediários e não realizamos vendas diretas de créditos.
-          </p>
-        </section>
+            <p>
+              A Trimobe presta serviços únicos de Google Meu Negócio para
+              pequenas empresas brasileiras: cadastro de perfil, otimização,
+              recuperação de perfil suspenso e site profissional conectado ao
+              Google. Atendemos remotamente, exclusivamente pelo WhatsApp.
+            </p>
+          </section>
 
-        {/* Dados coletados */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Database className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Dados que coletamos
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              Quais dados coletamos
             </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Formulário de contato
-              </h3>
-              <p className="mb-2">Ao preencher o formulário no nosso site, coletamos:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Nome</li>
-                <li>E-mail</li>
-                <li>Tipo de interesse (vender ou comprar créditos)</li>
-                <li>Mensagem</li>
-              </ul>
-            </div>
+            <p className="mb-3">
+              Esta página{" "}
+              <strong>não possui formulário de captura de leads</strong>. Não
+              pedimos seu nome, e-mail ou telefone neste site. Os únicos dados
+              que coletamos são:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Dados de navegação anônimos</strong> via Google Analytics
+                / Google Tag Manager — endereço IP, tipo de dispositivo, páginas
+                visitadas e duração de visita. Usados de forma agregada.
+              </li>
+              <li>
+                <strong>Conversas no WhatsApp</strong> — quando você inicia uma
+                conversa pelo botão da página, o conteúdo dessa conversa fica
+                armazenado no aplicativo do WhatsApp. As regras de tratamento
+                são as do próprio WhatsApp/Meta.
+              </li>
+              <li>
+                <strong>Dados de cliente contratante</strong> — apenas após
+                fechamento, coletamos pelo WhatsApp os dados necessários para
+                executar o serviço (CNPJ, endereço da empresa, fotos, horário,
+                acesso administrativo ao perfil quando aplicável).
+              </li>
+            </ul>
+          </section>
 
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Dados de navegação
-              </h3>
-              <p>
-                Coletamos automaticamente dados técnicos como endereço IP, tipo de navegador, páginas visitadas e duração da visita, por meio de ferramentas de análise. Esses dados são usados de forma agregada e não permitem identificação individual.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Finalidade e base legal */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Eye className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
               Como usamos seus dados
             </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <th className="text-left py-2 pr-4 font-semibold text-gray-900 dark:text-white">Finalidade</th>
-                    <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">Base legal (LGPD)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
-                  <tr>
-                    <td className="py-2 pr-4">Responder à sua mensagem e dar continuidade ao atendimento</td>
-                    <td className="py-2">Legítimo interesse / execução de contrato</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 pr-4">Enviar informações sobre nossos serviços</td>
-                    <td className="py-2">Consentimento</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 pr-4">Analisar o desempenho do site</td>
-                    <td className="py-2">Legítimo interesse</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 pr-4">Cumprir obrigações legais</td>
-                    <td className="py-2">Obrigação legal</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Atender o seu contato e fechar o orçamento.</li>
+              <li>Executar e entregar o serviço contratado.</li>
+              <li>
+                Emitir cobrança via PIX ou link de Mercado Pago no momento da
+                entrega.
+              </li>
+              <li>
+                Cumprir obrigações legais (fiscais, contábeis, regulatórias).
+              </li>
+            </ul>
+            <p className="mt-3">
+              Não fazemos disparos de marketing por e-mail, SMS ou WhatsApp para
+              quem não nos contratou. Não vendemos, alugamos ou cedemos seus
+              dados a terceiros.
+            </p>
+          </section>
 
-        {/* Segurança */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Lock className="w-6 h-6 text-primary dark:text-white" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Segurança dos dados
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              Quem mais tem acesso
             </h2>
-          </div>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>
-              Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados contra acesso não autorizado, perda ou divulgação indevida:
-            </p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Transmissão criptografada via HTTPS/TLS em todas as comunicações</li>
-              <li>Acesso aos dados restrito às pessoas estritamente necessárias para o atendimento</li>
-              <li>Serviços de terceiros selecionados com padrões equivalentes de segurança</li>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Google</strong> — operação do perfil, do Maps e do site
+                conectado. Tratamento regido pelas políticas do Google.
+              </li>
+              <li>
+                <strong>Meta / WhatsApp</strong> — armazenamento e transporte
+                das mensagens trocadas com você.
+              </li>
+              <li>
+                <strong>Mercado Pago</strong> — processamento de pagamento (PIX
+                e cartão), com tratamento próprio.
+              </li>
+              <li>
+                <strong>Vercel</strong> — hospedagem desta página e logs de
+                infraestrutura.
+              </li>
             </ul>
-          </div>
-        </section>
+          </section>
 
-        {/* Compartilhamento */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Compartilhamento de dados
-          </h2>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>
-              Não vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros para fins comerciais. Seus dados podem ser compartilhados apenas nas seguintes situações:
-            </p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Fornecedores de serviço:</strong> utilizamos a plataforma Brevo para envio e gestão de e-mails, sujeita a contrato de processamento de dados.</li>
-              <li><strong>Ferramentas de análise:</strong> utilizamos o Google Analytics para análise de tráfego, com dados anonimizados.</li>
-              <li><strong>Obrigação legal:</strong> quando exigido por autoridade competente ou determinação judicial.</li>
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              Seus direitos (LGPD)
+            </h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Confirmar que tratamos os seus dados.</li>
+              <li>Acessar, corrigir e atualizar dados que temos sobre você.</li>
+              <li>Solicitar a eliminação dos dados desnecessários.</li>
+              <li>Revogar consentimento a qualquer momento.</li>
             </ul>
-          </div>
-        </section>
-
-        {/* Retenção */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Retenção de dados
-          </h2>
-          <p className="text-gray-700 dark:text-gray-300">
-            Mantemos seus dados pelo tempo necessário para atender à finalidade para a qual foram coletados ou para cumprir obrigações legais. Dados de contato são mantidos por até 2 anos após o último contato, salvo manifestação em contrário.
-          </p>
-        </section>
-
-        {/* Seus direitos */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Seus direitos (LGPD)
-          </h2>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>Você tem os seguintes direitos em relação aos seus dados pessoais:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Confirmar a existência de tratamento dos seus dados</li>
-              <li>Acessar os dados que temos sobre você</li>
-              <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
-              <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários</li>
-              <li>Revogar o consentimento a qualquer momento</li>
-              <li>Solicitar a portabilidade dos dados</li>
-            </ul>
-            <p>
-              Para exercer qualquer desses direitos, envie um e-mail para{' '}
-              <a href="mailto:contato@trimobe.com" className="text-primary dark:text-white hover:underline">
+            <p className="mt-3">
+              Para exercer qualquer desses direitos, escreva para{" "}
+              <a
+                href="mailto:contato@trimobe.com"
+                className="text-brand hover:underline"
+              >
                 contato@trimobe.com
-              </a>{' '}
-              com o assunto "Direitos LGPD". Responderemos em até 15 dias úteis.
+              </a>{" "}
+              com o assunto “Direitos LGPD”. Respondemos em até 15 dias úteis.
             </p>
-          </div>
-        </section>
+          </section>
 
-        {/* Cookies */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Cookies
-          </h2>
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              Cookies
+            </h2>
             <p>
-              Utilizamos cookies essenciais para o funcionamento do site e cookies analíticos para entender como os visitantes interagem com nossas páginas. Cookies analíticos são coletados apenas com seu consentimento.
+              Usamos cookies essenciais para o funcionamento da página e cookies
+              analíticos via Google Analytics para entender como ela é usada.
+              Você pode configurar seu navegador para recusar cookies sem
+              prejuízo da navegação.
             </p>
+          </section>
+
+          <section>
+            <h2 className="font-display font-semibold text-h2 text-ink mb-3">
+              Atualizações
+            </h2>
             <p>
-              Você pode configurar seu navegador para recusar cookies, mas isso pode afetar a experiência de navegação.
+              Esta política pode ser atualizada para refletir mudanças nos
+              serviços ou na legislação. A data no topo indica a versão vigente.
             </p>
-          </div>
-        </section>
-
-        {/* Contato */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Contato e encarregado (DPO)
-          </h2>
-          <div className="bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Em caso de dúvidas sobre esta política ou sobre o tratamento dos seus dados:
-            </p>
-            <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p><strong>E-mail:</strong> <a href="mailto:contato@trimobe.com" className="text-primary dark:text-white hover:underline">contato@trimobe.com</a></p>
-              <p><strong>Assunto sugerido:</strong> [PRIVACIDADE] — breve descrição</p>
-            </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-              Você também pode registrar reclamações junto à Autoridade Nacional de Proteção de Dados (ANPD), em{' '}
-              <span className="font-medium">gov.br/anpd</span>.
-            </p>
-          </div>
-        </section>
-
-        {/* Atualizações */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Atualizações desta política
-          </h2>
-          <p className="text-gray-700 dark:text-gray-300">
-            Esta política pode ser atualizada periodicamente. Alterações relevantes serão comunicadas por e-mail ou por aviso no site com antecedência mínima de 15 dias. O uso continuado dos nossos serviços após a entrada em vigor das alterações implica a aceitação da versão atualizada.
-          </p>
-        </section>
-
+          </section>
+        </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            © 2026 Trimobe. Todos os direitos reservados.
-          </p>
+      <footer className="border-t border-border py-8">
+        <div className="mx-auto max-w-content px-5 text-center text-microcopy text-ink-muted">
+          © {new Date().getFullYear()} Trimobe.
         </div>
       </footer>
     </div>
