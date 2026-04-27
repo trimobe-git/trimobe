@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { whatsappUrl } from "../lib/whatsapp";
 
 export default function StickyWhatsAppButton() {
-  const href = whatsappUrl("hero");
+  const href = whatsappUrl("botaoFixo");
 
   return (
     <div
@@ -15,10 +15,16 @@ export default function StickyWhatsAppButton() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar no WhatsApp"
-          className="flex items-center justify-center gap-2 w-full min-h-[56px] rounded-2xl bg-cta hover:bg-cta-hover text-white font-semibold text-lead shadow-cta active:translate-y-[1px] transition touch-manipulation"
+          className="group flex items-center justify-center gap-2.5 w-full min-h-[58px] rounded-2xl bg-cta hover:bg-cta-hover text-white font-semibold text-lead shadow-cta-glow active:translate-y-[1px] transition-all touch-manipulation"
         >
           <MessageCircle size={22} strokeWidth={2.4} aria-hidden />
           <span>Falar no WhatsApp</span>
+          <span
+            aria-hidden
+            className="ml-1 transition-transform group-hover:translate-x-1"
+          >
+            →
+          </span>
         </a>
       </div>
     </div>

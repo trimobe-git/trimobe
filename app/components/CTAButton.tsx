@@ -21,21 +21,21 @@ export default function CTAButton({
   ariaLabel,
 }: CTAButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition active:translate-y-[1px] touch-manipulation";
+    "group inline-flex items-center justify-center gap-2.5 rounded-2xl font-semibold transition-all duration-200 active:translate-y-[1px] touch-manipulation";
 
   const variantCls =
     variant === "primary"
-      ? "bg-cta hover:bg-cta-hover text-white shadow-cta"
+      ? "bg-cta hover:bg-cta-hover text-white shadow-cta hover:shadow-cta-glow hover:-translate-y-0.5"
       : variant === "outline"
-      ? "border border-ink/15 text-ink hover:border-ink/35 bg-surface"
+      ? "border border-ink/15 text-ink hover:border-brand hover:text-brand bg-surface"
       : "text-brand hover:text-brand-strong underline-offset-4 hover:underline";
 
   const sizeCls =
     variant === "ghost"
       ? "px-2 py-2 text-body"
       : size === "lg"
-      ? "px-6 py-4 text-lead min-h-[56px]"
-      : "px-5 py-3.5 text-body min-h-[52px]";
+      ? "px-7 py-4 text-lead min-h-[58px]"
+      : "px-6 py-3.5 text-body min-h-[52px]";
 
   const widthCls = fullWidth && variant !== "ghost" ? "w-full" : "";
 
@@ -48,9 +48,22 @@ export default function CTAButton({
       className={`${base} ${variantCls} ${sizeCls} ${widthCls} ${className}`}
     >
       {variant === "primary" && (
-        <MessageCircle size={20} strokeWidth={2.4} aria-hidden />
+        <MessageCircle
+          size={20}
+          strokeWidth={2.4}
+          aria-hidden
+          className="transition-transform group-hover:rotate-[-8deg] group-hover:scale-110"
+        />
       )}
       <span>{children}</span>
+      {variant === "primary" && (
+        <span
+          aria-hidden
+          className="ml-1 transition-transform group-hover:translate-x-1"
+        >
+          →
+        </span>
+      )}
     </Link>
   );
 }

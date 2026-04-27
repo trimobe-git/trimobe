@@ -6,8 +6,6 @@ import SituationsSection from "./components/sections/SituationsSection";
 import HowItWorksSection from "./components/sections/HowItWorksSection";
 import ServicesSection from "./components/sections/ServicesSection";
 import RiskFreeSection from "./components/sections/RiskFreeSection";
-import WhyChooseSection from "./components/sections/WhyChooseSection";
-import GuaranteesSection from "./components/sections/GuaranteesSection";
 import FAQSection from "./components/sections/FAQSection";
 import FinalCTASection from "./components/sections/FinalCTASection";
 
@@ -22,8 +20,6 @@ export default function Home() {
         <HowItWorksSection />
         <ServicesSection />
         <RiskFreeSection />
-        <WhyChooseSection />
-        <GuaranteesSection />
         <FAQSection />
         <FinalCTASection />
       </main>

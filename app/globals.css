@@ -3,14 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #FAF7F2;
+  --color-bg: #F8F9FA;
   --color-surface: #FFFFFF;
-  --color-ink: #0F1112;
-  --color-ink-muted: #525861;
-  --color-border: #E8E2D6;
-  --color-brand: #0B5742;
-  --color-brand-soft: #E8F2EE;
-  --color-accent: #C24A1C;
+  --color-ink: #202124;
+  --color-ink-muted: #5F6368;
+  --color-ink-soft: #3C4043;
+  --color-border: #DADCE0;
+  --color-border-warm: #E8EAED;
+  --color-brand: #1A73E8;
+  --color-brand-soft: #E8F0FE;
+  --color-brand-deep: #0D2A5C;
+  --color-accent: #EA4335;
+  --color-accent-warm: #F28B82;
+  --color-gold: #FBBC04;
+  --color-gold-soft: #FEF7E0;
+  --color-paper-warm: #F1F3F4;
+  --color-sky-tint: #E8F0FE;
+  --color-success: #34A853;
   --color-cta: #25D366;
 }
 
@@ -42,12 +51,53 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(15, 17, 18, 0.045) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(32, 33, 36, 0.04) 1px, transparent 1px);
   background-size: 3px 3px;
   opacity: 0.35;
   pointer-events: none;
   z-index: -1;
   mix-blend-mode: multiply;
+}
+
+/* Stronger editorial paper grain for hero/feature sections */
+.grain-warm {
+  position: relative;
+  isolation: isolate;
+}
+.grain-warm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(32, 33, 36, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(26, 115, 232, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+/* Editorial horizontal rule — thin double line, magazine style */
+.editorial-rule {
+  border: 0;
+  border-top: 1px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+  height: 5px;
+}
+
+/* Eyebrow label decoration — small marker dot */
+.eyebrow-mark::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  transform: translateY(-1px);
 }
 
 /* Reserve space at the bottom on mobile for the sticky WhatsApp CTA */
@@ -112,10 +162,15 @@ body {
   display: none;
 }
 .faq-item summary .chevron {
-  transition: transform 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
-.faq-item[open] summary .chevron {
-  transform: rotate(180deg);
+.faq-item summary .faq-icon-vertical {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform-origin: center;
+}
+.faq-item[open] summary .faq-icon-vertical {
+  opacity: 0;
+  transform: scaleY(0);
 }
 .faq-item .faq-body {
   overflow: hidden;
@@ -131,6 +186,22 @@ body {
   display: inline-block;
   transform: rotate(-3deg);
   letter-spacing: 0.08em;
+}
+
+/* Editorial card with subtle micro-rotation */
+.tilt-left { transform: rotate(-1.5deg); }
+.tilt-right { transform: rotate(1.5deg); }
+
+/* Reveal — toggled by IntersectionObserver wrapper */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Decorative divider for hero guarantees row */
