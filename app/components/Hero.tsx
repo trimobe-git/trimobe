@@ -17,7 +17,7 @@ import Reveal from "./visuals/Reveal";
 
 export default function Hero() {
   return (
-    <section className="relative grain-warm overflow-hidden">
+    <section id="hero" className="relative grain-warm overflow-hidden">
       {/* Decorative background shapes — desktop only */}
       <BlobShape
         className="hidden md:block absolute -top-12 -right-20 w-[420px] h-[420px] opacity-60 -z-10"

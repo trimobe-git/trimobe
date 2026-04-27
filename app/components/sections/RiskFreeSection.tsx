@@ -69,7 +69,7 @@ export default function RiskFreeSection() {
                 href={whatsappUrl("blocoSemRisco")}
                 size="lg"
                 ariaLabel="Quero começar — falar no WhatsApp"
-                className="!bg-white !text-brand-deep hover:!bg-paper-warm !shadow-cta-glow"
+                className="!shadow-cta-glow"
               >
                 Quero começar
               </CTAButton>
