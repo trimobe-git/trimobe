@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import WhatsAppIcon from "./visuals/WhatsAppIcon";
 
 type CTAButtonProps = {
   href: string;
@@ -48,10 +48,8 @@ export default function CTAButton({
       className={`${base} ${variantCls} ${sizeCls} ${widthCls} ${className}`}
     >
       {variant === "primary" && (
-        <MessageCircle
+        <WhatsAppIcon
           size={20}
-          strokeWidth={2.4}
-          aria-hidden
           className="transition-transform group-hover:rotate-[-8deg] group-hover:scale-110"
         />
       )}

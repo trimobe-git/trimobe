@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import { MapPinHouse } from "lucide-react";
 import { phoneDisplay } from "../lib/whatsapp";
 import { WavyLine } from "./visuals/DecorativeShapes";
 
@@ -24,27 +24,12 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="md:col-span-5">
             <span className="inline-flex items-center gap-2" aria-label="Trimobe">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <MapPinHouse
+                size={32}
+                color="#FFFFFF"
+                strokeWidth={2}
                 aria-hidden
-              >
-                <path
-                  d="M16 3c5.523 0 10 4.477 10 10 0 6.5-7.5 13.5-9.292 15.05a1 1 0 0 1-1.416 0C13.5 26.5 6 19.5 6 13 6 7.477 10.477 3 16 3Z"
-                  fill="#FFFFFF"
-                />
-                <path
-                  d="M11.5 13.4l3 3 6-6"
-                  stroke="#1A73E8"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle cx="24.5" cy="7.5" r="2.5" fill="#FBBC04" />
-              </svg>
+              />
               <span className="font-display font-semibold tracking-tight text-[1.25rem] leading-none text-white">
                 Trimobe
               </span>
